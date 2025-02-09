@@ -1,23 +1,15 @@
 source "https://rubygems.org"
-
+ruby "3.4.1" 
+gem "bigdecimal"
 # Hello! This is where you manage which Jekyll version is used to run.
 # When you want to use a different version, change it below, save the
 # file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
 #
-#     bundle exec jekyll serve
+#     bundle exec jekyll serve
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "~> 4.1.0"
-gem "webrick"
-
-# Fix for mismatched deps: https://github.com/ffi/ffi/issues/1103
-gem "ffi", "< 1.17.0"
-# Fix for sassc 2.2.0 Error: https://github.com/sass/sassc-ruby/issues/146
-# gem "sassc", "< 2.2.0"
-# Fix for cloudflare pages: https://github.com/mhdzli/simorq/pull/9
-# gem "jekyll-sass-converter", "~> 2.2"
-
+gem "jekyll", "~> 4.3"  # Or a later 4.x version if you prefer
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 
@@ -27,18 +19,21 @@ gem "ffi", "< 1.17.0"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-  gem 'jekyll-feed', '~> 0.13'
-  gem 'jekyll-sitemap', '~> 1.4'
-  gem 'jekyll-compose', '~> 0.12.0'
-  gem 'jekyll-postfiles', '~> 3.1'
-  gem "jekyll-target-blank"
-  gem 'tzinfo', platforms: [:mingw, :x64_mingw, :mswin, :mswin64, :jruby]
-  gem 'tzinfo-data', platforms: [:mingw, :x64_mingw, :mswin, :mswin64, :jruby]
+gem 'jekyll-feed', '~> 0.13'
+gem 'jekyll-sitemap', '~> 1.4'
+gem 'jekyll-compose', '~> 0.12.0'
+gem 'jekyll-postfiles', '~> 3.1'
 end
 
-# Windows does not include zoneinfo files, so bundle tzinfo and tzinfo-data gems
-# gem 'tzinfo', platforms: [:mingw, :x64_mingw, :mswin, :mswin64, :jruby]
-# gem "tzinfo-data", platforms: [:mingw, :x64_mingw, :mswin, :mswin64, :jruby]
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Performance-booster for watching directories on Windows
-# gem "wdm", "~> 0.1.0" if Gem.win_platform?
+gem "wdm", "~> 0.1.0" if Gem.win_platform?
+
+gem "webrick", "~> 1.7"
+
+# Add these to address the Ruby 3.4 warnings, but upgrading Jekyll is still the best long-term solution.
+gem "logger"
+gem "csv"
+
