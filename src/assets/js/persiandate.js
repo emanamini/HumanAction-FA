@@ -10,9 +10,9 @@ for (const date of postDates) {
   date.textContent = georgianDate.toLocaleString("fa-IR", options);
 };
 
-// Convert archive page years to Persian
-const archiveDates = document.getElementsByClassName("archive-date");
-for (const date of archiveDates) {
+// Convert summaries page years to Persian
+const summariesDates = document.getElementsByClassName("summaries-date");
+for (const date of summariesDates) {
   const options = {
     year: "numeric",
   };

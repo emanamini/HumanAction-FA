@@ -3,18 +3,39 @@ layout: default
 home: true
 ---
 
-<h3 class="posts-item-note" aria-label="Recent Posts">
-	نوشته‌های تازه
-</h3>
-{%- for post in site.posts limit: site.number_of_posts -%}
-<article class="post-item">
-  <span class="post-item-date">
-    <i class="fa fa-calendar" style="color: #51d994;"></i>
-    <time datetime="{{ post.date | date_to_xmlschema }}">{% assign date_format = site.minima.date_format | default: "%d %b، %Y" %}{{ post.date | date: date_format }}
-  </span>
-  <h4 class="post-item-title" style="padding-right: 8px;">
-    <a href="{{ post.url }}">{{ post.title | escape }}</a>
-  </h4>
-</article>
-{%- endfor -%}
+<div style="text-align: center;">
 
+<h1>به خلاصه های کنش انسانی خوش آمدید</h1>
+
+<p> این وبلاگ به خلاصه و تحلیل کتاب <b>کنش انسانی</b> اثر لودویگ فون میزس، یکی از ارکان اقتصاد اتریش، اختصاص دارد. ما ایده‌ها و بینش‌های کلیدی آن را به مقالات قابل هضم آسان تقسیم می‌کنیم. </p>
+
+<p> چه دانشجوی اقتصاد باشید و چه فقط در مورد آثار میزس کنجکاو باشید، این وبلاگ به شما کمک می‌کند تا ایده‌های پیچیده و در عین حال عمیق کتاب را هدایت کنید. </p>
+
+<div class="center-container">
+  <a href="/summaries/" class="btn">برای خواندن خلاصه ها اینجا کلیک کنید</a>
+</div>
+<style>
+.center-container {
+  text-align: center;
+  /* Centers the content within this div */
+}
+
+.btn {
+  display: inline-block;
+  /* Makes the <a> element behave like a block element but inline */
+  padding: 10px 20px;
+  /* Adjust padding as needed */
+  border: 1px solid grey;
+  /* Black border */
+  text-decoration: none;
+  /* Remove underline from link */
+  border-radius: 0px;
+  /* optional, makes the corners square*/
+
+}
+
+.btn:hover {
+  background-color: #eee;
+  /* Light grey on hover */
+}
+</style>
