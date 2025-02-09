@@ -2,7 +2,7 @@
 const postDates = document.getElementsByTagName("time");
 for (const date of postDates) {
   const options = {
-    year: "numeric",
+//    year: "numeric",
     month: "long",
     day: "numeric"
   };
